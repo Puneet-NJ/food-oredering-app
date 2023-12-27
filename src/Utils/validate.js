@@ -1,5 +1,5 @@
 const validate = (fullName, email, password) => {
-	if (!fullName) {
+	if (fullName !== undefined) {
 		const idealFullName =
 			/(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/.test(
 				fullName
@@ -17,7 +17,7 @@ const validate = (fullName, email, password) => {
 	const idealPassword =
 		/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/.test(password);
 
-	if (!idealPassword) return "Invaid password";
+	if (!idealPassword) return "Invalid password";
 };
 
 export default validate;

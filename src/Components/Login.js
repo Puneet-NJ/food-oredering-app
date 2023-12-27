@@ -10,6 +10,8 @@ import {
 	updateProfile,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { addUser } from "../Utils/UserSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
 	const [isSignIn, setIsSignIn] = useState(true);
@@ -17,6 +19,7 @@ const Login = () => {
 	const email = useRef(null);
 	const password = useRef(null);
 	const fullName = useRef(null);
+	const dispatch = useDispatch();
 
 	const handleSignIn = () => {
 		setIsSignIn(!isSignIn);
@@ -47,6 +50,13 @@ const Login = () => {
 						.then(() => {
 							// Profile updated!
 							// ...
+							dispatch(
+								addUser({
+									uid: user?.uid,
+									email: user?.email,
+									displayName: user?.displayName,
+								})
+							);
 						})
 						.catch((error) => {
 							// An error occurred
@@ -111,18 +121,18 @@ const Login = () => {
 							placeholder="Password"
 							className="w-full py-2 mt-4 px-6 rounded"
 						></input>
+						<div className="w-1/2 mx-10 mt-5 text-red-600 font-bold">
+							{invalidInput}
+						</div>
+						<div className="flex justify-center items-center mt-8 text-white font-bold">
+							<button
+								onClick={handleSubmit}
+								className="px-10 py-2 bg-slate-500 rounded-2xl hover:scale-110 hover:bg-slate-600 duration-150"
+							>
+								Sign In
+							</button>
+						</div>
 					</form>
-					<div className="w-1/2 mx-10 mt-5 text-red-600 font-bold">
-						{invalidInput}
-					</div>
-					<div className="flex justify-center items-center mt-8 text-white font-bold">
-						<button
-							onClick={handleSubmit}
-							className="px-10 py-2 bg-slate-500 rounded-2xl hover:scale-110 hover:bg-slate-600 duration-150"
-						>
-							Sign In
-						</button>
-					</div>
 
 					<div className="text-sm font-semibold mt-10 ml-1 text-gray-400 text-center">
 						{isSignIn ? "New here?" : "Already Registred?"}{" "}

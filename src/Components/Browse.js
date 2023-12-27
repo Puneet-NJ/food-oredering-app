@@ -8,7 +8,6 @@ const Browse = () => {
 	const restaurants = useSelector((store) => store.restaurants.restaurants);
 
 	if (!restaurants) return;
-	console.log(restaurants?.[0]);
 
 	return (
 		<div className="flex flex-wrap justify-center my-20">
