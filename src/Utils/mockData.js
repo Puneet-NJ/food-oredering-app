@@ -4,4 +4,13 @@ export const loginPageImg =
 export const RESTAURANTS =
 	"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.857307&lng=77.58954899999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
+export const RESTAURANTS2 =
+	"https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+
 export const CDN_IMAGE = "https://media-assets.swiggy.com/swiggy/image/upload/";
+
+export const MENU =
+	"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.857307&lng=77.58954899999999&restaurantId=";
+
+export const ITEM_IMAGE =
+	"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";

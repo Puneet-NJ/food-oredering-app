@@ -8,6 +8,7 @@ import Header from "./Header";
 import About from "./About";
 import FAQ from "./FAQ";
 import Cart from "./Cart";
+import RestaurantMenu from "./RestaurantMenu";
 
 const Main = () => {
 	return (
@@ -16,11 +17,15 @@ const Main = () => {
 				<Routes>
 					<Route element={<Header />}>
 						<Route path="/" element={<Login />}></Route>
-						<Route path="/browse">
+						<Route path="browse">
 							<Route index element={<Browse />}></Route>
 							<Route path="about" element={<About />}></Route>
 							<Route path="faq" element={<FAQ />}></Route>
 							<Route path="cart" element={<Cart />}></Route>
+
+							<Route path="restaurant">
+								<Route path=":id" element={<RestaurantMenu />}></Route>
+							</Route>
 						</Route>
 					</Route>
 				</Routes>

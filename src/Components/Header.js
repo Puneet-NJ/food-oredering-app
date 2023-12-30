@@ -63,16 +63,16 @@ const Header = () => {
 						<div className="w-[450px]">
 							<ul className="flex justify-between">
 								<li>Online: {onlineStatus ? "✅" : "🔴"}</li>
-								<li>
+								<li className="hover:text-gray-400 duration-150">
 									<Link to="/browse">Home</Link>
 								</li>
-								<li>
+								<li className="hover:text-gray-400 duration-150">
 									<Link to="/browse/about">About Us</Link>
 								</li>
-								<li>
+								<li className="hover:text-gray-400 duration-150">
 									<Link to="/browse/faq">FAQ</Link>
 								</li>
-								<li>
+								<li className="hover:text-gray-400 duration-150">
 									<Link to="/browse/cart">Cart-(0 Items)</Link>
 								</li>
 							</ul>
