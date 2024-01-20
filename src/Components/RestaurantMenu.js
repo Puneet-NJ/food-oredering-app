@@ -6,7 +6,6 @@ import CategoryItems from "./CategoryItems";
 import ResInfoMenu from "./ResInfo-Menu";
 
 const RestaurantMenu = () => {
-	const [showCategory, setShowCategory] = useState(true);
 	const { id } = useParams();
 	useFetchRestaurantMenu(id);
 
@@ -14,6 +13,9 @@ const RestaurantMenu = () => {
 		(store) => store.restaurants.restaurantInMenuPage
 	);
 	const categoryList = useSelector((store) => store.restaurants.restaurantMenu);
+
+	const [showCategory, setShowCategory] = useState(0);
+
 	if (!categoryList || !restaurant) return;
 
 	const {
@@ -24,10 +26,6 @@ const RestaurantMenu = () => {
 		costForTwoMessage,
 		sla,
 	} = restaurant;
-
-	const handleAccordian = () => {
-		setShowCategory(!showCategory);
-	};
 
 	return (
 		<div className="w-7/12 mx-auto text-center my-20">
@@ -40,21 +38,22 @@ const RestaurantMenu = () => {
 				deliveryTime={sla?.deliveryTime}
 			/>
 			<div className="mt-6">
-				{categoryList.map((category) => {
+				{categoryList.map((category, index) => {
 					if (!category?.card?.card?.title) return null;
 					return (
-						<div className="mt-3">
-							<div
-								onClick={handleAccordian}
-								className="font-bold text-lg py-2 bg-slate-400"
-							>
-								{category?.card?.card?.title}
-							</div>
-							{showCategory && (
-								<div>
-									<CategoryItems items={category?.card?.card?.itemCards} />
-								</div>
-							)}
+						<div className="mt-3" key={category?.card?.card?.id}>
+							{
+								<CategoryItems
+									key={category?.card?.card?.key}
+									showCategory={showCategory === index ? true : false}
+									setShowCategory={(index) => {
+										setShowCategory(index);
+									}}
+									items={category?.card?.card?.itemCards}
+									title={category?.card?.card?.title}
+									index={index}
+								/>
+							}
 						</div>
 					);
 				})}

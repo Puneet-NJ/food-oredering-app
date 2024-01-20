@@ -14,3 +14,24 @@ export const MENU =
 
 export const ITEM_IMAGE =
 	"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/";
+
+export const ABOUT_MAIN_IMAGE =
+	"https://bhookh-lagi-hai.vercel.app/Aboutbg.c1fb8e7a.jpg";
+
+export const ABOUT_OUR_STORY =
+	"https://bhookh-lagi-hai.vercel.app/AboutCompany.7865e32c.jpg";
+
+export const ABOUT_FLOAVORFUL =
+	"https://bhookh-lagi-hai.vercel.app/Cultinary.2ce20b13.jpg";
+
+export const ABOUT_DEALS =
+	"https://bhookh-lagi-hai.vercel.app/Deal.fc6fc8e0.jpg";
+
+export const ABOUT_CUSTOMER =
+	"https://bhookh-lagi-hai.vercel.app/CustSupp.24b62a90.jpg";
+
+export const ABOUT_USER_EXPERIENCE =
+	"https://bhookh-lagi-hai.vercel.app/Ux.14c8d338.jpg";
+
+export const ABOUT_QUALITY =
+	"https://bhookh-lagi-hai.vercel.app/Quality.22f69e3d.jpg";

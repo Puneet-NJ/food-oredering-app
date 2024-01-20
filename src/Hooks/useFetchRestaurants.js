@@ -13,9 +13,11 @@ const useFetchRestaurants = () => {
 		const data2 = await fetch(RESTAURANTS2);
 		const json2 = await data2.json();
 
+		// IF RESTAURANTS ARE NOT RENDIRING => CHANGE THE ARRAY INDEX
 		dispatch(
 			addRestaurants(
-				json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
+				json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle
+					?.restaurants
 			)
 		);
 	};

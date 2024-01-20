@@ -133,9 +133,8 @@ const Browse = () => {
 
 			<div className="flex flex-wrap justify-center mt-10">
 				{filteredRestaurants.map((restaurant) => (
-					<div className="p-6">
+					<div className="p-6" key={restaurant?.info?.id}>
 						<Link
-							key={restaurant?.info?.id}
 							to={"/browse/restaurant/" + restaurant?.info?.id}
 							className="cursor-default"
 						>
