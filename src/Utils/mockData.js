@@ -35,3 +35,31 @@ export const ABOUT_USER_EXPERIENCE =
 
 export const ABOUT_QUALITY =
 	"https://bhookh-lagi-hai.vercel.app/Quality.22f69e3d.jpg";
+
+export const faqs = [
+	{
+		question: "How does Foodalix work?",
+		answer:
+			"Foodalix is a user-friendly food ordering platform that connects you with a variety of local restaurants. Simply browse through the menu options, make your selection, place your order, and enjoy delicious meals delivered straight to your doorstep.",
+	},
+	{
+		question: "What types of cuisines are available on Foodalix?",
+		answer:
+			"Foodalix offers a diverse range of cuisines to cater to every taste bud. From comforting local favorites to exotic global flavors, you'll find a wide variety of options to choose from.",
+	},
+	{
+		question: "How can I track my order?",
+		answer:
+			"Once you've placed your order, you can easily track its status on our website. We provide real-time updates on your order's preparation and delivery progress, so you'll know exactly when your delicious meal will arrive.",
+	},
+	{
+		question: "Are there any discounts or loyalty programs available?",
+		answer:
+			"Absolutely! We believe in spoiling our users with exclusive deals, discounts, and loyalty rewards. Keep an eye out for special offers that make your dining experiences even more delightful.",
+	},
+	{
+		question: " How long does delivery take?",
+		answer:
+			"Delivery times vary depending on factors such as the restaurant's location, your location, and order volume. Rest assured, we strive to provide accurate estimated delivery times during the checkout process.",
+	},
+];

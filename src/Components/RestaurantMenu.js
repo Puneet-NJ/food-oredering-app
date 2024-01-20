@@ -39,22 +39,23 @@ const RestaurantMenu = () => {
 			/>
 			<div className="mt-6">
 				{categoryList.map((category, index) => {
-					if (!category?.card?.card?.title) return null;
 					return (
-						<div className="mt-3" key={category?.card?.card?.id}>
-							{
-								<CategoryItems
-									key={category?.card?.card?.key}
-									showCategory={showCategory === index ? true : false}
-									setShowCategory={(index) => {
-										setShowCategory(index);
-									}}
-									items={category?.card?.card?.itemCards}
-									title={category?.card?.card?.title}
-									index={index}
-								/>
-							}
-						</div>
+						category?.card?.card?.title && (
+							<div className="mt-3" key={category?.card?.card?.id}>
+								{
+									<CategoryItems
+										key={category?.card?.card?.key}
+										showCategory={showCategory === index ? true : false}
+										setShowCategory={(index) => {
+											setShowCategory(index);
+										}}
+										items={category?.card?.card?.itemCards}
+										title={category?.card?.card?.title}
+										index={index}
+									/>
+								}
+							</div>
+						)
 					);
 				})}
 			</div>
