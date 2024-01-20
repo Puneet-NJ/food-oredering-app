@@ -13,11 +13,6 @@ const CategoryItems = (props) => {
 
 	const cart = useSelector((store) => store.cart.cart);
 
-	// useEffect(() => {
-	// 	console.log(filteredItems);
-	// 	setFilteredItems(items);
-	// }, []);
-
 	if (!filteredItems) return;
 
 	const handleAddToCart = (item) => {
@@ -51,8 +46,6 @@ const CategoryItems = (props) => {
 			};
 		});
 
-		console.log(newCart);
-
 		dispatch(updateCart(newCart));
 		setFilteredItems(newCart);
 	};
@@ -70,14 +63,10 @@ const CategoryItems = (props) => {
 			<>
 				{title && (
 					<div
-						onClick={() =>
-							setShowCategory && showCategory
-								? setShowCategory(null)
-								: setShowCategory(index)
-						}
+						onClick={setShowCategory}
 						className="font-bold text-md py-3 bg-slate-400 cursor-pointer"
 					>
-						{title} ⬇️
+						{title + "(" + title.length + ")"} ⬇️
 					</div>
 				)}
 			</>

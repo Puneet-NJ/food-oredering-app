@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "./Login";
 import Browse from "./Browse";
@@ -19,7 +19,14 @@ const Main = () => {
 						<Route path="/" element={<Login />}></Route>
 						<Route path="browse">
 							<Route index element={<Browse />}></Route>
-							<Route path="about" element={<About />}></Route>
+							<Route
+								path="about"
+								element={
+									<Suspense fallback={<h1>Loading...</h1>}>
+										<About />
+									</Suspense>
+								}
+							></Route>
 							<Route path="faq" element={<FAQ />}></Route>
 							<Route path="cart" element={<Cart />}></Route>
 

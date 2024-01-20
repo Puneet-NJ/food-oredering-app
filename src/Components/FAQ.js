@@ -6,7 +6,7 @@ const FAQ = () => {
 	const [showIndex, setShowIndex] = useState(0);
 
 	return (
-		<div className="w-[70%] mx-auto text-center">
+		<div className="w-[70%] mx-auto text-center mt-16 mb-28">
 			<h1 className="mt-10 font-semibold text-4xl">
 				Frequently Asked Questions
 			</h1>

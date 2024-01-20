@@ -4,6 +4,7 @@ import useFetchRestaurantMenu from "../Hooks/useFetchRestaurantMenu";
 import { useSelector } from "react-redux";
 import CategoryItems from "./CategoryItems";
 import ResInfoMenu from "./ResInfo-Menu";
+import ShimmerResMenu from "./Shimmer-ResMenu";
 
 const RestaurantMenu = () => {
 	const { id } = useParams();
@@ -16,7 +17,7 @@ const RestaurantMenu = () => {
 
 	const [showCategory, setShowCategory] = useState(0);
 
-	if (!categoryList || !restaurant) return;
+	if (!restaurant) return <ShimmerResMenu />;
 
 	const {
 		name,
@@ -40,22 +41,22 @@ const RestaurantMenu = () => {
 			<div className="mt-6">
 				{categoryList.map((category, index) => {
 					return (
-						category?.card?.card?.title && (
-							<div className="mt-3" key={category?.card?.card?.id}>
-								{
-									<CategoryItems
-										key={category?.card?.card?.key}
-										showCategory={showCategory === index ? true : false}
-										setShowCategory={(index) => {
-											setShowCategory(index);
-										}}
-										items={category?.card?.card?.itemCards}
-										title={category?.card?.card?.title}
-										index={index}
-									/>
-								}
-							</div>
-						)
+						<div className="mt-3" key={category?.card?.card?.id}>
+							{
+								<CategoryItems
+									key={category?.card?.card?.key}
+									showCategory={showCategory === index}
+									setShowCategory={() => {
+										showCategory === index
+											? setShowCategory()
+											: setShowCategory(index);
+									}}
+									items={category?.card?.card?.itemCards}
+									title={category?.card?.card?.title}
+									index={index}
+								/>
+							}
+						</div>
 					);
 				})}
 			</div>

@@ -5,7 +5,6 @@ import CategoryItems from "./CategoryItems";
 const Cart = () => {
 	const cartItems = useSelector((store) => store.cart.cart);
 
-	console.log(cartItems);
 	if (!cartItems) return;
 
 	let price = 0;

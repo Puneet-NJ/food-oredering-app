@@ -3,6 +3,7 @@ import useFetchRestaurants from "../Hooks/useFetchRestaurants";
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ShimmerResCard from "./Shimmer-ResCard";
 
 const Browse = () => {
 	const [searchRes, setSearchRes] = useState("");
@@ -15,7 +16,7 @@ const Browse = () => {
 		setFilteredRestaurants(restaurants);
 	}, [restaurants]);
 
-	if (!restaurants || !filteredRestaurants) return;
+	if (!restaurants || !filteredRestaurants) return <ShimmerResCard />;
 
 	const handleSearchRestaurant = () => {
 		const arr = restaurants.filter((restaurant) =>

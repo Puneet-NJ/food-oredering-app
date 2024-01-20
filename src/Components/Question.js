@@ -5,7 +5,7 @@ const Question = ({ question, answer, showIndex, setShowIndex }) => {
 		<div className="bg-slate-200 my-4">
 			<div
 				onClick={setShowIndex}
-				className="text-xl bg-slate-300 py-2 cursor-pointer"
+				className="text-gray-800 text-xl bg-slate-300 py-2 cursor-pointer"
 			>
 				{question}
 			</div>

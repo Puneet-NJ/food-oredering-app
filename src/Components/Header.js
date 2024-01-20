@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../Utils/UserSlice";
 import useOnlineStatus from "../Hooks/useOnlineStatus";
+import Footer from "./Footer";
 
 const Header = () => {
 	const navigate = useNavigate();
@@ -89,6 +90,7 @@ const Header = () => {
 				)}
 			</div>
 			<Outlet />
+			{user && <Footer />}
 		</>
 	);
 };

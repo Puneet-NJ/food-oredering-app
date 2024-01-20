@@ -63,3 +63,21 @@ export const faqs = [
 			"Delivery times vary depending on factors such as the restaurant's location, your location, and order volume. Rest assured, we strive to provide accurate estimated delivery times during the checkout process.",
 	},
 ];
+
+export const footerImageLinks = [
+	{
+		imageLink:
+			"https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png",
+		toLink: "https://github.com/puneet-nj",
+	},
+	{
+		imageLink:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEeHgbGz-N7FyHT4pQrZhOLHxEiBS8EpLMXQ&usqp=CAU",
+		toLink: "https://twitter.com/puneet_nj",
+	},
+	{
+		imageLink:
+			"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU5aQTP2LvlG0GnD1xtirP9XPsmSd9hA_hcg&usqp=CAU",
+		toLink: "https://www.linkedin.com/in/puneet-nj-a5a0161bb/",
+	},
+];
