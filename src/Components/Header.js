@@ -13,6 +13,7 @@ const Header = () => {
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 	const user = useSelector((store) => store.user.user);
+	const cart = useSelector((store) => store.cart.cart);
 	const onlineStatus = useOnlineStatus();
 
 	useEffect(() => {
@@ -74,7 +75,7 @@ const Header = () => {
 									<Link to="/browse/faq">FAQ</Link>
 								</li>
 								<li className="hover:text-gray-400 duration-150">
-									<Link to="/browse/cart">Cart-(0 Items)</Link>
+									<Link to="/browse/cart">Cart-({cart.length} Items)</Link>
 								</li>
 							</ul>
 						</div>

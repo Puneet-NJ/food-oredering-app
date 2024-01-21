@@ -21,8 +21,6 @@ const CategoryItems = (props) => {
 		);
 
 		if (!present) dispatch(addCart({ ...item, totalItems: 1 }));
-
-		navigate("/browse/cart");
 	};
 
 	const handleInc_Dec = (itemIndex, inc) => {
