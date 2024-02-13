@@ -11,7 +11,7 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../Utils/UserSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
 	const [isSignIn, setIsSignIn] = useState(true);
@@ -20,6 +20,11 @@ const Login = () => {
 	const password = useRef(null);
 	const fullName = useRef(null);
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const user = useSelector((store) => store.user.user);
+
+	if (user) navigate("/browse");
 
 	const handleSignIn = () => {
 		setIsSignIn(!isSignIn);

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import logo from "../images/food-ordering-app-logo.jpeg";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../Utils/firebase";
@@ -90,7 +90,10 @@ const Header = () => {
 					</>
 				)}
 			</div>
-			<Outlet />
+			<Suspense fallback={<h1>Loading...</h1>}>
+				<Outlet />
+			</Suspense>
+
 			{user && <Footer />}
 		</>
 	);

@@ -7,11 +7,13 @@ const useFetchRestaurants = () => {
 	const dispatch = useDispatch();
 
 	const fetchRestaurants = async () => {
-		const data = await fetch(RESTAURANTS);
+		const data = await fetch(
+			`https://cors-anywhere.herokuapp.com/${RESTAURANTS}`
+		);
 		const json = await data.json();
 
-		const data2 = await fetch(RESTAURANTS2);
-		const json2 = await data2.json();
+		// const data2 = await fetch(RESTAURANTS2);
+		// const json2 = await data2.json();
 
 		// IF RESTAURANTS ARE NOT RENDIRING => CHANGE THE ARRAY INDEX
 		dispatch(
