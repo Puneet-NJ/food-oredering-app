@@ -20,11 +20,11 @@ const About = () => {
 			</div>
 
 			<p className="mt-20 font-semibold bg-slate-200 px-10 py-5 shadow-xl">
-				At Bhookh Lagi Hai?, we are driven by a relentless passion for
-				delivering delightful dining experiences right to your fingertips. Our
-				journey began with a simple yet profound vision - to revolutionize the
-				way you indulge in your favorite meals. Whether you're yearning for
-				comfort food, exploring exotic global cuisines, or seeking wholesome
+				At Foodalix, we are driven by a relentless passion for delivering
+				delightful dining experiences right to your fingertips. Our journey
+				began with a simple yet profound vision - to revolutionize the way you
+				indulge in your favorite meals. Whether you're yearning for comfort
+				food, exploring exotic global cuisines, or seeking wholesome
 				alternatives, we've got you covered!
 			</p>
 
